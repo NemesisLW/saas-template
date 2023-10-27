@@ -1,9 +1,13 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import LogoImage from "@/public/logo.svg";
+import LogoBlack from "@/public/logoBlack.svg";
+import logoWhite from "@/public/logoWhite.svg";
 import { AspectRatio } from "./ui/aspect-ratio";
+import { useTheme } from "next-themes";
 
 function Logo() {
+  const { theme } = useTheme();
   return (
     <Link href="/" prefetch={false} className="overflow-hidden">
       <div className="flex items-center w-72 h-14">
@@ -13,9 +17,9 @@ function Logo() {
         >
           <Image
             priority
-            src={LogoImage}
+            src={theme === "light" ? LogoBlack : logoWhite}
             alt="Logo"
-            className="rounded-full dark:filter dark:invert"
+            className="rounded-full"
           />
         </AspectRatio>
       </div>
