@@ -1,3 +1,4 @@
+import UserButton from "./UserButton";
 import DarkModeToggle from "./DarkModeToggle";
 import Logo from "./Logo";
 
@@ -14,9 +15,9 @@ function Header() {
 
           {/* DarkModeToggle & Avatar Button */}
           <DarkModeToggle />
+          <UserButton />
         </div>
       </nav>
-
       {/* Upgrade Banner */}
     </header>
   );
