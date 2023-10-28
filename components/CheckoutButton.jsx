@@ -1,13 +1,24 @@
 "use client";
+import { db } from "@/firebase.config";
+import { addDoc, collection } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import React from "react";
+import React, { useState } from "react";
 
 function CheckoutButton() {
   const { data: session } = useSession();
+  const [loading, setLoading] = useState(false);
   const createCheckoutSession = async () => {
-    if (!session) return;
+    if (!session?.user.id) return;
 
     //push into firestore
+    const docRef = await addDoc(
+      collection(db, "customers", session.user.id, "checkout_session"),
+      {
+        price: "price_si_OnlcsLNQYbMVzV",
+        success_url: window.location.origin,
+        cancel_url: window.location.origin,
+      }
+    );
     //stripe ext login on firebase
     //redirect to checkout page
   };
