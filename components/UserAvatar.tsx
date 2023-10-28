@@ -20,6 +20,7 @@ function UserAvatar({
           width={40}
           height={40}
           className="rounded-full"
+          referrerPolicy="no-referrer"
         />
       ) : (
         <AvatarImage src="https://github.com/nemesisLW.png" alt="@nemesislw" />
