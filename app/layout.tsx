@@ -1,6 +1,7 @@
-import ClientProvider from "@/components/Providers/ClientProvider";
 import "./globals.css";
 import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/toaster";
+import ClientProvider from "@/components/Providers/ClientProvider";
 import { ThemeProvider } from "@/components/Providers/ThemeProvider";
 import FirebaseAuthProvider from "@/components/Providers/FirebaseAuthProvider";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             >
               <Header />
               {children}
+              <Toaster />
             </ThemeProvider>
           </FirebaseAuthProvider>
         </body>

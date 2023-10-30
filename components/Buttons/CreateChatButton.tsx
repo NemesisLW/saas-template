@@ -17,7 +17,7 @@ function CreateChatButton({ isLarge }: { isLarge?: boolean }) {
   const subscription = useSubscriptionStore((state) => state.subscription);
 
   const createNewChat = async () => {
-    router.push(`/chat/${chatId}`);
+    // router.push(`/chat/${chatId}`);
   };
 
   if (isLarge) {
