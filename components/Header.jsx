@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import Link from "next/link";
 import { MessageSquare } from "lucide-react";
-import CreateChatButton from "./Buttons/CreateChatButton";
+import CreateChatButton from "./Chat/CreateChat";
 import UpgradeBanner from "./UpgradeBanner";
 
 async function Header() {
