@@ -1,5 +1,5 @@
 import { CheckIcon } from "lucide-react";
-import CheckoutButton from "./CheckoutButton";
+import CheckoutButton from "./Buttons/CheckoutButton";
 import Link from "next/link";
 import { tiers } from "@/constants";
 

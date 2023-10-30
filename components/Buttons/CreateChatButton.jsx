@@ -1,7 +1,7 @@
 "use client";
 
 import { MessageSquarePlus } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 
 function CreateChatButton() {

@@ -1,11 +1,12 @@
-import UserButton from "./UserButton";
+import UserButton from "./Buttons/UserButton";
 import DarkModeToggle from "./DarkModeToggle";
 import Logo from "./Logo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import Link from "next/link";
 import { MessageSquare } from "lucide-react";
-import CreateChatButton from "./CreateChatButton";
+import CreateChatButton from "./Buttons/CreateChatButton";
+import UpgradeBanner from "./UpgradeBanner";
 
 async function Header() {
   const session = await getServerSession(authOptions);
@@ -34,6 +35,7 @@ async function Header() {
         </div>
       </nav>
       {/* Upgrade Banner */}
+      <UpgradeBanner />
     </header>
   );
 }
