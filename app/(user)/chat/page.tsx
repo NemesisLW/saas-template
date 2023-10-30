@@ -5,7 +5,7 @@ function ChatsPage() {
       {/* Chat Permissions */}
 
       {/* ChatList */}
-      <ChatList />
+      {/* <ChatList /> */}
     </div>
   );
 }

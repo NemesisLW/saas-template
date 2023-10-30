@@ -1,6 +1,6 @@
 "use client";
 import { db } from "@/firebase.config";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 import LoadingSpinner from "../LoadingSpinner";
@@ -20,7 +20,17 @@ function CheckoutButton() {
         cancel_url: window.location.origin,
       }
     );
-    //stripe ext login on firebase
+    // Firestore Stripe Extension Code Block
+    return onSnapshot(docRef, (snap) => {
+      const data = snap.data;
+      const url = data?.url;
+      const error = data?.error;
+
+      if (error) {
+        alert(`An Error occured: ${error.message}`);
+        setLoading(false);
+      }
+    });
     //redirect to checkout page
   };
   return (
